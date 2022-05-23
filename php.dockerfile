@@ -12,6 +12,9 @@ RUN apt-get update && \
     libzip-dev \
     unzip \ 
     npm \
+    npm cache clean -f \
+    npm install -g n \
+    n stable \
 	&& docker-php-ext-install mysqli pdo pdo_mysql calendar \
 	&& docker-php-ext-install -j$(nproc) iconv \
     && docker-php-ext-configure gd \
