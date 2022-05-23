@@ -1,0 +1,2 @@
+# inertiajs
+Inertiajs study case
