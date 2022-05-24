@@ -19,15 +19,6 @@
     >
   </div>
 </template>
-
-<script>
-import layout from "../Shared/Layout.vue";
-
-export default {
-  layout,
-};
-</script>
-
 <script setup>
 defineProps({
   time: String,
