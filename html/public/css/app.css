@@ -437,6 +437,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .ml-6 {
   margin-left: 1.5rem;
 }
+.ml-4 {
+  margin-left: 1rem;
+}
 .flex {
   display: flex;
 }
@@ -451,6 +454,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .list-disc {
   list-style-type: disc;
+}
+.items-center {
+  align-items: center;
 }
 .justify-between {
   justify-content: space-between;
@@ -497,6 +503,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 .font-bold {
   font-weight: 700;
