@@ -20,13 +20,11 @@
   </Layout>
 </template>
 
-<script>
+<script setup>
 import Layout from '../Shared/Layout';
 
-export default {
-  components: { Layout },
-  props: {
+defineProps({
     time: String,
-  },
-};
+});
+
 </script>
