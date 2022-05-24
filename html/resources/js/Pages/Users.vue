@@ -1,4 +1,12 @@
 <template>
+  <Head>
+    <title>Users</title>
+    <meta
+      type="description"
+      head-key="description"
+      content="Users from My new App with Inertiajs"
+    />
+  </Head>
   <h1 class="text-3xl">Users</h1>
   <div
     class="

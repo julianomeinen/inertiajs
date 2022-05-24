@@ -1,4 +1,13 @@
 <template>
+  <Head>
+    <title>App</title>
+    <meta
+      type="description"
+      head-key="description"
+      content="My new App with Inertiajs"
+    />
+  </Head>
+
   <section class="p-6 bg-gray-200 shadow-sm">
     <header class="flex justify-between">
       <div class="flex items-center">
@@ -9,16 +18,18 @@
     </header>
   </section>
   <section class="p-6 flex justify-between">
-      <div class="flex items-center bg-slate-200 m-auto p-6 rounded-2xl shadow-lg">
-        <h2 class="text-2xl text-red-500 font-bold p-6">Podcast of the week</h2>
-        <div class="p-6 rounded-2xl bg-black" >
-            <iframe
-            src="https://embed.ted.com/talks/lang/en/al_gore_we_have_to_stop_destroying_our_future"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen
-            ></iframe>
-        </div>
+    <div
+      class="flex items-center bg-slate-200 m-auto p-6 rounded-2xl shadow-lg"
+    >
+      <h2 class="text-2xl text-red-500 font-bold p-6">Podcast of the week</h2>
+      <div class="p-6 rounded-2xl bg-black">
+        <iframe
+          src="https://embed.ted.com/talks/lang/en/al_gore_we_have_to_stop_destroying_our_future"
+          frameborder="0"
+          scrolling="no"
+          allowfullscreen
+        ></iframe>
+      </div>
     </div>
   </section>
   <section class="p-6">
