@@ -15,17 +15,16 @@
       "
     >
       <p>The current time is {{ time }}.</p>
-      <Link href="/users" class="text-blue-500" preserve-scroll>Refresh</Link>
+      <Link href="/users" class="text-blue-500 hover:underline" preserve-scroll>Refresh</Link>
     </div>
   </Layout>
 </template>
 
 <script>
-import { Link } from '@inertiajs/inertia-vue3';
 import Layout from '../Shared/Layout';
 
 export default {
-  components: { Layout, Link },
+  components: { Layout },
   props: {
     time: String,
   },
