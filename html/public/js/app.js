@@ -19632,7 +19632,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "p-6 bg-gray-200"
+  "class": "p-6 bg-gray-200 shadow-sm"
 };
 var _hoisted_2 = {
   "class": "flex justify-between"
@@ -19654,9 +19654,9 @@ var _hoisted_5 = {
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", {
   "class": "p-6 flex justify-between"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "flex items-center bg-slate-600 m-auto p-6 rounded-md shadow-lg"
+  "class": "flex items-center bg-slate-200 m-auto p-6 rounded-2xl shadow-lg"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
-  "class": "text-2xl text-red-600 font-bold p-6"
+  "class": "text-2xl text-red-500 font-bold p-6"
 }, "Podcast of the week"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "p-6 rounded-2xl bg-black"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("iframe", {
