@@ -46,13 +46,13 @@ Route::get('/users/create', function () {
 });
 
 Route::post('/users', function () {
-    // validade
+    // validate the request
     $attributes = Request::validate([
         'name' => 'required',
         'email' => ['required','email'],
         'password' => 'required',
     ]);
-    //persist
+    //persist the data
     User::create($attributes);
 
     //redirect

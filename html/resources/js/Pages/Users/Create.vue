@@ -19,8 +19,8 @@
             type="text"
             name="name"
             id="name"
-            required
         >
+        <div v-if="props.errors.name" class="text-sm text-red-600" v-text="props.errors.name"></div>
     </div>
     <div class="mb-6">
         <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
@@ -32,8 +32,8 @@
             type="email"
             name="email"
             id="email"
-            required
         >
+        <div v-if="props.errors.email" class="text-sm text-red-600" v-text="props.errors.email"></div>
     </div>
     <div class="mb-6">
         <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
@@ -45,8 +45,8 @@
             type="password"
             name="password"
             id="password"
-            required
         >
+        <div v-if="props.errors.password" class="text-sm text-red-600" v-text="props.errors.password"></div>
     </div>
     <div class="mb-6">
         <button type="submit" class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500" >
@@ -64,6 +64,10 @@ let form = reactive({
     name: '',
     email: '',
     password: ''
+});
+
+let props = defineProps({
+    errors: Object
 });
 
 let submit = () => {
