@@ -49,7 +49,7 @@
         <div v-if="props.errors.password" class="text-sm text-red-600" v-text="props.errors.password"></div>
     </div>
     <div class="mb-6">
-        <button type="submit" class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500" >
+        <button type="submit" class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500" :disabled="processing"  >
             Submit
         </button>
     </div>
@@ -58,7 +58,7 @@
 </template>
 <script setup>
 import { Inertia } from '@inertiajs/inertia';
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 
 let form = reactive({
     name: '',
@@ -70,8 +70,13 @@ let props = defineProps({
     errors: Object
 });
 
+let processing = ref(false);
+
 let submit = () => {
-    Inertia.post('/users', form);
+    Inertia.post('/users', form, {
+        onStart: () => { processing.value = true },
+        onFinish: () => { processing.value = false },
+    });
 }
 </script>
 
