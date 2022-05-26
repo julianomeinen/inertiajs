@@ -20,7 +20,7 @@
             name="name"
             id="name"
         >
-        <div v-if="props.errors.name" class="text-sm text-red-600" v-text="props.errors.name"></div>
+        <div v-if="form.errors.name" class="text-sm text-red-600" v-text="form.errors.name"></div>
     </div>
     <div class="mb-6">
         <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
@@ -33,7 +33,7 @@
             name="email"
             id="email"
         >
-        <div v-if="props.errors.email" class="text-sm text-red-600" v-text="props.errors.email"></div>
+        <div v-if="form.errors.email" class="text-sm text-red-600" v-text="form.errors.email"></div>
     </div>
     <div class="mb-6">
         <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
@@ -46,10 +46,10 @@
             name="password"
             id="password"
         >
-        <div v-if="props.errors.password" class="text-sm text-red-600" v-text="props.errors.password"></div>
+        <div v-if="form.errors.password" class="text-sm text-red-600" v-text="form.errors.password"></div>
     </div>
     <div class="mb-6">
-        <button type="submit" class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500" :disabled="processing"  >
+        <button type="submit" class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500" :disabled="form.processing"  >
             Submit
         </button>
     </div>
@@ -57,26 +57,16 @@
   </form>
 </template>
 <script setup>
-import { Inertia } from '@inertiajs/inertia';
-import { reactive, ref } from 'vue'
+import { useForm } from "@inertiajs/inertia-vue3"
 
-let form = reactive({
+let form = useForm({
     name: '',
     email: '',
     password: ''
 });
 
-let props = defineProps({
-    errors: Object
-});
-
-let processing = ref(false);
-
 let submit = () => {
-    Inertia.post('/users', form, {
-        onStart: () => { processing.value = true },
-        onFinish: () => { processing.value = false },
-    });
+    form.post('/users');
 }
 </script>
 
