@@ -1,7 +1,7 @@
 # inertiajs
 Inertiajs study case
 
-PHP 8.0.5 + apache + custom ini file + log files
+PHP 8.1.6 + apache + custom ini file + log files
 
 Run docker-compose up -d
 
@@ -18,7 +18,6 @@ Installation process
 10 - Install next if using vue3: npm install vue@next
 11 - Install sfc if using vue3: npm install -D @vue/compiler-sfc
 12 - Follow the https://laracasts.com/series/build-modern-laravel-apps-using-inertia-js/episodes/2 video
-13 - Update NodeJs: apt-get update && npm cache clean -f && npm install -g n && n stable
 13 - Install dependencies: npm install
 14 - npm install vue-loader@^16.2.0 --save-dev --legacy-peer-deps
 15 - Run npx mix 2 times: npx mix

@@ -12,9 +12,6 @@ RUN apt-get update && \
     libzip-dev \
     unzip \ 
     npm \
-    npm cache clean -f \
-    npm install -g n \
-    n stable \
 	&& docker-php-ext-install mysqli pdo pdo_mysql calendar \
 	&& docker-php-ext-install -j$(nproc) iconv \
     && docker-php-ext-configure gd \
@@ -27,7 +24,9 @@ RUN docker-php-ext-configure gmp
 RUN docker-php-ext-install gmp
 RUN docker-php-ext-install zip
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer && chmod +x /usr/bin/composer 
-
+RUN npm cache clean -f
+RUN npm install -g n 
+RUN n stable
 RUN a2enmod headers
 RUN a2enmod rewrite
 
