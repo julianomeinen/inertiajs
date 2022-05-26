@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -21,16 +22,22 @@ Route::get('/', function () {
 
 Route::get('/users', function () {
 
-    $usersList = User::orderBy('name')
+    $usersList = User::query()
+                        ->when(Request::input('search'), function($query, $search){
+                            $query->where('name', 'like', "%{$search}%");
+                        })
+                        ->orderBy('name')
                         ->paginate(15)
+                        ->withQueryString()
                         ->through(fn($user) => [
-                            'id' => $user->id,
-                            'name' => $user->name,
-                        ]);
+                                'id' => $user->id,
+                                'name' => $user->name,
+                            ]);
 
     return Inertia::render('Users', [
         'time' => now()->toTimeString(),
-        'users' => $usersList
+        'users' => $usersList,
+        'filters' => Request::only(['search']),
     ]);
 });
 

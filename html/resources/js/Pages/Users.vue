@@ -7,7 +7,11 @@
       content="Users from My new App with Inertiajs"
     />
   </Head>
-  <h1 class="text-3xl">Users</h1>
+
+  <div class="flex justify-between mb-6">
+        <h1 class="text-3xl">Users</h1>
+        <input v-model="search" type="text" placeholder="Search..." class="rounded-lg px-2 border" />
+  </div>
 
   <div class="flex flex-col">
     <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -115,10 +119,23 @@
   </div>
 </template>
 <script setup>
+import {ref, watch} from 'vue'
 import Pagination from "../Shared/Pagination.vue";
+import {Inertia} from '@inertiajs/inertia'
 
-defineProps({
+let props = defineProps({
   time: String,
   users: Object,
+  filters: Object
 });
+
+let search = ref(props.filters.search);
+
+watch(search, value => {
+    Inertia.get('/users', {search: value}, {
+        preserveState: true,
+        replace: true
+    });
+});
+
 </script>
