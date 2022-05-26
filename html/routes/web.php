@@ -34,11 +34,29 @@ Route::get('/users', function () {
                                 'name' => $user->name,
                             ]);
 
-    return Inertia::render('Users', [
+    return Inertia::render('Users/Index', [
         'time' => now()->toTimeString(),
         'users' => $usersList,
         'filters' => Request::only(['search']),
     ]);
+});
+
+Route::get('/users/create', function () {
+    return Inertia::render('Users/Create');
+});
+
+Route::post('/users', function () {
+    // validade
+    $attributes = Request::validate([
+        'name' => 'required',
+        'email' => ['required','email'],
+        'password' => 'required',
+    ]);
+    //persist
+    User::create($attributes);
+
+    //redirect
+    return redirect('/users');
 });
 
 Route::get('/settings', function () {
