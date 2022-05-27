@@ -11,14 +11,11 @@
         <NavLink href="/settings?asdas=asdas&asdc=adas" :active="$page.component == 'Settings'" >Settings</NavLink>
       </li>
       <li>
-        <Link
+        <NavLink
           href="/logout"
-          method="post"
-          as="button"
-          :data="{ logout: 1 }"
-          class="text-blue-500 hover:underline">
+          method="post" >
           Logout
-        </Link>
+        </NavLink>
       </li>
     </ul>
   </nav>

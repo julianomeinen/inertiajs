@@ -69,4 +69,3 @@ let submit = () => {
     form.post('/users');
 }
 </script>
-

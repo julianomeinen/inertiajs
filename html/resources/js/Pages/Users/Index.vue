@@ -11,7 +11,7 @@
   <div class="flex justify-between mb-6">
         <div class="flex items-center">
             <h1 class="text-3xl">Users</h1>
-            <Link href="/users/create" class="text-blue-500 hover:underline ml-5" >
+            <Link v-if="can.createUser" href="/users/create" class="text-blue-500 hover:underline ml-5" >
                 New user
             </Link>
         </div>
@@ -85,6 +85,7 @@
                   "
                 >
                   <Link
+                    v-if="user.can.edit"
                     :href="`users/${user.id}/edit`"
                     class="
                       font-semibold
@@ -132,7 +133,8 @@ import debounce from 'lodash/debounce'
 let props = defineProps({
   time: String,
   users: Object,
-  filters: Object
+  filters: Object,
+  can : Object,
 });
 
 let search = ref(props.filters.search);
