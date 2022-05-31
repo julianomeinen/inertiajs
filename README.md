@@ -20,5 +20,7 @@ Installation process
 12 - Follow the https://laracasts.com/series/build-modern-laravel-apps-using-inertia-js/episodes/2 video
 13 - Install dependencies: npm install
 14 - npm install vue-loader@^16.2.0 --save-dev --legacy-peer-deps
-15 - Run npx mix 2 times: npx mix
-16 - Run for development: npm run watch-poll
+15 - npm install -D tailwindcss postcss autoprefixer
+16 - npx tailwindcss init
+17 - Run npx mix 2 times: npx mix
+18 - Run for development: npm run watch-poll
